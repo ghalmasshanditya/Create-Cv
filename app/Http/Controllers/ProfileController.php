@@ -186,18 +186,10 @@ class ProfileController extends Controller
             return back()->withErrors($validator)->withInput($request->all())->with('message', 'Sorry! Failed to change profile.');
         }
         // die;
-        // $file     = Request()->profile;
-        // $fileName = Auth::user()->email . '.' . $file->extension();
-        // $file->move(public_path('assets/dist/img/'), $fileName);
         $file     = Request()->profile;
         $fileName = Auth::user()->email . '.' . $file->extension();
+        $file->move(public_path('assets/dist/img/'), $fileName);
 
-        $path = public_path('assets/dist/img/' . $fileName);
-
-        $fileResize = Image::make($file->path());
-        $fileResize->resize(512, 512);
-
-        $fileResize->save($path);
 
         $data = array(
             'foto'       => $fileName,
