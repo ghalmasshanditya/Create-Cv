@@ -84,7 +84,8 @@
                     <tr>
                         <td>
                             <strong>{{ $data->universitas }}</strong><br>
-                            <strong class="text-muted">{{ $data->tingkat }} {{ $data->jurusan }}</strong> | GPA : {{ $data->ipk }}
+                            <strong class="text-muted">{{ $data->tingkat }} {{ $data->jurusan }}</strong> | GPA : {{ $data->ipk }}<br>
+                            <span class="text-muted">{{ $data->deskripsi }}</span>
                         </td>
                         <td>{{ $data->bln_mulai }} - {{ $data->thn_mulai }}</td>
                         <td>{{ $data->bln_selesai }} - {{ $data->thn_selesai }}</td>
@@ -102,7 +103,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     @foreach ($skills as $data)
                     <tr>
                         <td>{{ $data->keterampilan }}</td>
@@ -132,13 +133,13 @@
                                 @endfor
                             @endif
                         </td>
-                        
+
                     </tr>
                     @endforeach
                     <tr>
                     </tr>
                 </tbody>
-                
+
             </table>
             <hr>
             <Strong>Activities</Strong><br>
@@ -195,7 +196,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                   
+
                     @foreach ($language as $data)
                     <tr>
                         <td>{{ $data->bahasa }}</td>
@@ -227,7 +228,7 @@
                         </td>
                     </tr>
                     @endforeach
-                    
+
                 </tbody>
             </table>
             <hr>

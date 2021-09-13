@@ -37,7 +37,8 @@
                     <td>{{ $no++ }}</td>
                     <td>
                         <strong>{{ $data->universitas }}</strong><br>
-                        <strong class="text-muted">{{ $data->tingkat }} {{ $data->jurusan }}</strong> | GPA : {{ $data->ipk }}
+                        <strong class="text-muted">{{ $data->tingkat }} {{ $data->jurusan }}</strong> | GPA : {{ $data->ipk }}<br>
+                        <span class="text-muted">{{ $data->deskripsi }}</span>
                     </td>
                     <td>{{ $data->bln_mulai }} - {{ $data->thn_mulai }}</td>
                     <td>{{ $data->bln_selesai }} - {{ $data->thn_selesai }}</td>

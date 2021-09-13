@@ -67,8 +67,8 @@
                 <div class="col-sm-10">
                     <select class="form-control select2bs4" style="width: 100%;" name="gender" value="{{ Auth::user()->jk }}">
                         <option selected="selected" disabled>- Chose Gender -</option>
-                        <option @if (Auth::user()->jk == 'Men') @endif value="Men">Men</option>
-                        <option @if (Auth::user()->jk == 'Women') @endif value="Women">Women</option>
+                        <option @if (Auth::user()->jk == 'Men') selected @endif value="Men">Men</option>
+                        <option @if (Auth::user()->jk == 'Women') selected @endif value="Women">Women</option>
                     </select>
                 </div>
             </div>
