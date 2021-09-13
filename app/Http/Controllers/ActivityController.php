@@ -67,6 +67,7 @@ class ActivityController extends Controller
 
         $data = array(
             'organisasi'  => Request()->organization,
+            'id_user'     => Auth::user()->id,
             'peran'       => Request()->role,
             'bln_mulai'   => Request()->start_month,
             'thn_mulai'   => Request()->start_year,

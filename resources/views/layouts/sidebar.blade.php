@@ -11,12 +11,16 @@
     <div class="user-panel @if (request()->segment(1) != 'profile') mt-3 pb-3 mb-3  @else mt-1 @endif d-flex">
         @if (request()->segment(1) != 'profile')
         <div class="image">
-        <img src="{{asset('assets')}}/dist/img/{{ Auth::user()->foto }}" class="img-circle elevation-2" alt="User Image">
+            @if (Auth::user()->foto == '')
+            <img src="{{asset('assets')}}/dist/img/profile.png" class="img-circle elevation-2" alt="User Image">
+            @else
+            <img src="{{asset('assets')}}/dist/img/{{ Auth::user()->foto }}" class="img-circle elevation-2" alt="User Image">
+            @endif
         </div>
         <div class="info">
         <a href="/profile" class="d-block">
             @php
-                $nama = "Ghalmas Shanditya Putra Agung";
+                $nama = Auth::user()->name;
             @endphp
             @if (strlen($nama) > 23)
             @php

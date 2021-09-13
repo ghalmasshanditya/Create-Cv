@@ -60,7 +60,8 @@ class LanguageController extends Controller
         }
 
         $data = array(
-            'bahasa' => Request()->language,
+            'bahasa'       => Request()->language,
+            'id_user'      => Auth::user()->id,
             'tingkat'      => Request()->level,
             'created_at'   => date('Y-m-d N:i:s'),
             'updated_at'   => date('Y-m-d N:i:s'),

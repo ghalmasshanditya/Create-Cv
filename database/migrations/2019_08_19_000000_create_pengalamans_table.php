@@ -15,6 +15,8 @@ class CreatePengalamansTable extends Migration
     {
         Schema::create('pengalamans', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
             $table->string('jabatan');
             $table->string('perusahaan');
             $table->string('negara');

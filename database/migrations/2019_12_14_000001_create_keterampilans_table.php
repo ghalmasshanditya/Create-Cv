@@ -15,6 +15,8 @@ class CreateKeterampilansTable extends Migration
     {
         Schema::create('keterampilans', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
             $table->string('keterampilan');
             $table->integer('tingkat');
             $table->timestamps();

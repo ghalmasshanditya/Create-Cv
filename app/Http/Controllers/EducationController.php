@@ -76,6 +76,7 @@ class EducationController extends Controller
 
         $data = array(
             'tingkat'     => Request()->qualification,
+            'id_user'     => Auth::user()->id,
             'universitas' => Request()->university,
             'jurusan'     => Request()->major,
             'bln_mulai'   => Request()->start_month,

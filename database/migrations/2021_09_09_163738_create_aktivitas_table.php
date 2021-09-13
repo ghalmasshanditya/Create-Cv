@@ -15,6 +15,8 @@ class CreateAktivitasTable extends Migration
     {
         Schema::create('aktivitas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
             $table->string('organisasi');
             $table->string('peran');
             $table->string('bln_mulai');

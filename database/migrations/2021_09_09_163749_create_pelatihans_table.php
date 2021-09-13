@@ -15,6 +15,8 @@ class CreatePelatihansTable extends Migration
     {
         Schema::create('pelatihans', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
             $table->string('nama_pelatihan');
             $table->string('penyelenggara');
             $table->date('tgl_mulai');

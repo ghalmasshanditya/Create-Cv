@@ -15,6 +15,8 @@ class CreateBahasasTable extends Migration
     {
         Schema::create('bahasas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
             $table->string('bahasa');
             $table->string('tingkat');
             $table->timestamps();

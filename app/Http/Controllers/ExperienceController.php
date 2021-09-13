@@ -77,6 +77,7 @@ class ExperienceController extends Controller
 
         $data = array(
             'jabatan'      => Request()->position,
+            'id_user'     => Auth::user()->id,
             'perusahaan'   => Request()->company_name,
             'gaji'         => Request()->salary,
             'negara'       => Request()->country,

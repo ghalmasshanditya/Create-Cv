@@ -65,6 +65,7 @@ class ResumeController extends Controller
 
         $data = array(
             'cv'         => $fileName,
+            'id_user'    => Auth::user()->id,
             'created_at' => date('Y-m-d N:i:s'),
             'updated_at' => date('Y-m-d N:i:s'),
         );

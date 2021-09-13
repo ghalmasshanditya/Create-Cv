@@ -65,6 +65,7 @@ class TrainingsController extends Controller
 
         $data = array(
             'nama_pelatihan' => Request()->training,
+            'id_user'        => Auth::user()->id,
             'penyelenggara'  => Request()->organizer,
             'tgl_mulai'      => Request()->start_date,
             'tgl_selesai'    => Request()->end_date,

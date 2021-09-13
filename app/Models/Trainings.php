@@ -14,7 +14,7 @@ class Trainings extends Model
 
     public function getAllData()
     {
-        return DB::table($this->table)->where($this->primaryKey, Auth::user()->id)->get();
+        return DB::table($this->table)->where('id_user', Auth::user()->id)->get();
     }
 
     public function getDataById($id)

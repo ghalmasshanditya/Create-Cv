@@ -58,9 +58,9 @@ class SkillsController extends Controller
 
             return back()->withErrors($validator)->withInput($request->all())->with('message', 'Sorry! Failed to add skill.');
         }
-
         $data = array(
             'keterampilan' => Request()->skill,
+            'id_user'      => Auth::user()->id,
             'tingkat'      => Request()->level,
             'created_at'   => date('Y-m-d N:i:s'),
             'updated_at'   => date('Y-m-d N:i:s'),

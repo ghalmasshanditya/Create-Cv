@@ -15,6 +15,8 @@ class CreatependidikansTable extends Migration
     {
         Schema::create('pendidikans', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
             $table->string('tingkat');
             $table->string('universitas');
             $table->string('jurusan');
