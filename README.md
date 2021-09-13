@@ -66,24 +66,43 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Screenshoots Application
 
 1. Register
-<img src="public/assets/screenshot/registration.jpg">
+<img src="public/assets/screenshot/registration.png">
 
 2. Login
-
+<img src="public/assets/screenshot/registration.png">
 3. Profile
-
+<img src="public/assets/screenshot/profile.png">
 4. Education
+<img src="public/assets/screenshot/education1.png">
+<img src="public/assets/screenshot/education2.png">
+<img src="public/assets/screenshot/education3.png">
 
 5. Work Experience
+<img src="public/assets/screenshot/work1.png">
 
 6. Skill
+<img src="public/assets/screenshot/skill1.png">
+<img src="public/assets/screenshot/skill2.png">
 
 7. Language
+<img src="public/assets/screenshot/language1.png">
+<img src="public/assets/screenshot/language2.png">
+<img src="public/assets/screenshot/language3.png">
 
 8. Activity
+<img src="public/assets/screenshot/activity1.png">
+<img src="public/assets/screenshot/activity2.png">
+<img src="public/assets/screenshot/activity3.png">
 
 9. Training
+<img src="public/assets/screenshot/training1.png">
+<img src="public/assets/screenshot/training2.png">
+<img src="public/assets/screenshot/training3.png">
 
 10. Resume
+<img src="public/assets/screenshot/resume1.png">
+<img src="public/assets/screenshot/resume2.png">
 
 11. Review
+<img src="public/assets/screenshot/preview1.png">
+<img src="public/assets/screenshot/preview2.png">
