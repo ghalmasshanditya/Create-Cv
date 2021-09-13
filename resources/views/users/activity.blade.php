@@ -81,17 +81,23 @@
                     <div class="card-body mt-0">
                         <div class="form-group">
                             <label for="organization">Organization</label>
-                            <input type="text" class="form-control" id="organization" name="organization" placeholder="Organization" value="{{ old('organization') }}">
+                            <input type="text" class="form-control @error('organization') is-invalid @enderror" id="organization" name="organization" placeholder="Organization" value="{{ old('organization') }}">
+                            @error('organization')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="role">Role</label>
-                            <input type="text" class="form-control" id="role" name="role" placeholder="role" value="{{ old('role') }}">
+                            <input type="text" class="form-control @error('role') is-invalid @enderror" id="role" name="role" placeholder="role" value="{{ old('role') }}">
+                            @error('role')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Start</label>
-                                    <select class="form-control select2bs4" style="width: 100%;" name="start_month" value="{{ old('start_month') }}">
+                                    <select class="form-control @error('start_month') is-invalid @enderror select2bs4" style="width: 100%;" name="start_month" value="{{ old('start_month') }}">
                                         <option selected="selected" disabled>- Month -</option>
                                         <option value="January">January</option>
                                         <option value="February">February</option>
@@ -106,13 +112,19 @@
                                         <option value="November">November</option>
                                         <option value="December">December</option>
                                     </select>
-                                    <input type="text" class="form-control mt-1" placeholder="Year" name="start_year" value="{{ old('start_year') }}">
+                                    @error('start_month')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                    <input type="text" class="form-control @error('start_year') is-invalid @enderror mt-1" placeholder="Year" name="start_year" value="{{ old('start_year') }}">
+                                    @error('start_year')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>End</label>
-                                    <select class="form-control select2bs4" style="width: 100%;" name="end_month" value="{{ old('end_month') }}">
+                                    <select class="form-control @error('end_month') is-invalid @enderror select2bs4" style="width: 100%;" name="end_month" value="{{ old('end_month') }}">
                                         <option selected="selected" disabled>- Month -</option>
                                         <option value="January">January</option>
                                         <option value="February">February</option>
@@ -127,13 +139,22 @@
                                         <option value="November">November</option>
                                         <option value="December">December</option>
                                     </select>
-                                    <input type="text" class="form-control mt-1" placeholder="Year" name="end_year" value="{{ old('end_year') }}">
+                                    @error('end_month')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                    <input type="text" class="form-control @error('end_year') is-invalid @enderror mt-1" placeholder="Year" name="end_year" value="{{ old('end_year') }}">
+                                    @error('end_year')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" class="form-control" id="description" rows="5" placeholder="Description">{{ old('description') }}</textarea>
+                            <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description" rows="5" placeholder="Description">{{ old('description') }}</textarea>
+                            @error('description')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -166,17 +187,23 @@
                     <div class="card-body mt-0">
                         <div class="form-group">
                             <label for="organization">Organization</label>
-                            <input type="text" class="form-control" id="organization" name="organization" placeholder="Organization" value="{{ $data->organisasi }}">
+                            <input type="text" class="form-control @error('organization') is-invalid @enderror" id="organization" name="organization" placeholder="Organization" value="{{ $data->organisasi }}">
+                            @error('organization')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="role">Role</label>
-                            <input type="text" class="form-control" id="role" name="role" placeholder="role" value="{{ $data->peran }}">
+                            <input type="text" class="form-control @error('role') is-invalid @enderror" id="role" name="role" placeholder="role" value="{{ $data->peran }}">
+                            @error('role')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Start</label>
-                                    <select class="form-control select2bs4" style="width: 100%;" name="start_month" value="{{ old('start_month') }}">
+                                    <select class="form-control @error('start_month') is-invalid @enderror select2bs4" style="width: 100%;" name="start_month" value="{{ old('start_month') }}">
                                         <option selected="selected" disabled>- Month -</option>
                                         <option @if ($data->bln_mulai == 'January') selected @endif value="January">January</option>
                                         <option @if ($data->bln_mulai == 'February') selected @endif value="February">February</option>
@@ -191,13 +218,19 @@
                                         <option @if ($data->bln_mulai == 'November') selected @endif value="November">November</option>
                                         <option @if ($data->bln_mulai == 'December') selected @endif value="December">December</option>
                                     </select>
-                                    <input type="text" class="form-control mt-1" placeholder="Year" name="start_year" value="{{ $data->thn_mulai }}">
+                                    @error('start_month')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                    <input type="text" class="form-control @error('start_year') is-invalid @enderror mt-1" placeholder="Year" name="start_year" value="{{ $data->thn_mulai }}">
+                                    @error('start_year')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>End</label>
-                                    <select class="form-control select2bs4" style="width: 100%;" name="end_month" value="{{ old('end_month') }}">
+                                    <select class="form-control @error('end_month') is-invalid @enderror select2bs4" style="width: 100%;" name="end_month" value="{{ old('end_month') }}">
                                         <option selected="selected" disabled>- Month -</option>
                                         <option @if ($data->bln_selesai == 'January') selected @endif value="January">January</option>
                                         <option @if ($data->bln_selesai == 'February') selected @endif value="February">February</option>
@@ -212,13 +245,22 @@
                                         <option @if ($data->bln_selesai == 'November') selected @endif value="November">November</option>
                                         <option @if ($data->bln_selesai == 'December') selected @endif value="December">December</option>
                                     </select>
-                                    <input type="text" class="form-control mt-1" placeholder="Year" name="end_year" value="{{ $data->thn_selesai }}">
+                                    @error('end_month')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                    <input type="text" class="form-control @error('end_year') is-invalid @enderror mt-1" placeholder="Year" name="end_year" value="{{ $data->thn_selesai }}">
+                                    @error('end_year')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" class="form-control" id="description" rows="5" placeholder="Description"> {{ $data->deskripsi }}</textarea>
+                            <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description" rows="5" placeholder="Description"> {{ $data->deskripsi }}</textarea>
+                            @error('description')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                 </div>

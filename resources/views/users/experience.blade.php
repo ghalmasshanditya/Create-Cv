@@ -86,15 +86,21 @@
                     <div class="card-body mt-0">
                         <div class="form-group">
                             <label for="position">Position</label>
-                            <input type="text" class="form-control" id="position" name="position" placeholder="Position" value="{{ old('position') }}">
+                            <input type="text" class="form-control @error('position') is-invalid @enderror" id="position" name="position" placeholder="Position" value="{{ old('position') }}">
+                            @error('position')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="company_name">Company Name</label>
-                            <input type="text" class="form-control" id="company_name" name="company_name" placeholder="Company_name" value="{{ old('company_name') }}">
+                            <input type="text" class="form-control @error('company_name') is-invalid @enderror" id="company_name" name="company_name" placeholder="Company_name" value="{{ old('company_name') }}">
+                            @error('company_name')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="qualification">Position Level</label>
-                            <select class="form-control select2bs4" style="width: 100%;" name="position_level" value="{{ old('position_level') }}">
+                            <select class="form-control @error('position_level') is-invalid @enderror select2bs4" style="width: 100%;" name="position_level" value="{{ old('position_level') }}">
                                 <option selected="selected" disabled>- Chose Position -</option>
                                 <option value="Internship / OJT">Internship / OJT</option>
                                 <option value="Entry Level / Junior, Aprentice">Entry Level / Junior, Aprentice</option>
@@ -102,20 +108,29 @@
                                 <option value="Mid-Senior Level / Manager">Mid-Senior Level / Manager</option>
                                 <option value="Directior / Executive">Directior / Executive</option>
                             </select>
+                            @error('position_level')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="salary">Monthly Salary</label>
-                            <input type="number" min="0" class="form-control" id="salary" name="salary" placeholder="Salary" value="{{ old('salary') }}">
+                            <input type="number" min="0" class="form-control @error('salary') is-invalid @enderror" id="salary" name="salary" placeholder="Salary" value="{{ old('salary') }}">
+                            @error('salary')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="country">Country</label>
-                            <input type="text" class="form-control" id="country" name="country" placeholder="Country" value="{{ old('country') }}">
+                            <input type="text" class="form-control @error('country') is-invalid @enderror" id="country" name="country" placeholder="Country" value="{{ old('country') }}">
+                            @error('country')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Start</label>
-                                    <select class="form-control select2bs4" style="width: 100%;" name="start_month" value="{{ old('start_month') }}">
+                                    <select class="form-control @error('start_month') is-invalid @enderror select2bs4" style="width: 100%;" name="start_month" value="{{ old('start_month') }}">
                                         <option selected="selected" disabled>- Month -</option>
                                         <option value="January">January</option>
                                         <option value="February">February</option>
@@ -130,13 +145,19 @@
                                         <option value="November">November</option>
                                         <option value="December">December</option>
                                     </select>
-                                    <input type="text" class="form-control mt-1" placeholder="Year" name="start_year" value="{{ old('start_year') }}">
+                                    @error('start_month')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                    <input type="text" class="form-control @error('start_year') is-invalid @enderror mt-1" placeholder="Year" name="start_year" value="{{ old('start_year') }}">
+                                    @error('start_year')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>End</label>
-                                    <select class="form-control select2bs4" style="width: 100%;" name="end_month" value="{{ old('end_month') }}">
+                                    <select class="form-control @error('end_month') is-invalid @enderror select2bs4" style="width: 100%;" name="end_month" value="{{ old('end_month') }}">
                                         <option selected="selected" disabled>- Month -</option>
                                         <option value="January">January</option>
                                         <option value="February">February</option>
@@ -151,13 +172,22 @@
                                         <option value="November">November</option>
                                         <option value="December">December</option>
                                     </select>
-                                    <input type="text" class="form-control mt-1" placeholder="Year" name="end_year" value="{{ old('end_year') }}">
+                                    @error('end_month')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                    <input type="text" class="form-control @error('end_year') is-invalid @enderror mt-1" placeholder="Year" name="end_year" value="{{ old('end_year') }}">
+                                    @error('end_year')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" class="form-control" id="description" rows="5" placeholder="Description">{{ old('description') }}</textarea>
+                            <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description" rows="5" placeholder="Description">{{ old('description') }}</textarea>
+                            @error('description')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -189,15 +219,21 @@
                     <div class="card-body mt-0">
                         <div class="form-group">
                             <label for="position">Position</label>
-                            <input type="text" class="form-control" id="position" name="position" placeholder="Position" value="{{ $data->jabatan }}">
+                            <input type="text" class="form-control @error('position') is-invalid @enderror" id="position" name="position" placeholder="Position" value="{{ $data->jabatan }}">
+                            @error('position')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="company_name">Company Name</label>
-                            <input type="text" class="form-control" id="company_name" name="company_name" placeholder="Company_name" value={{ $data->perusahaan }}">
+                            <input type="text" class="form-control @error('company_name') is-invalid @enderror" id="company_name" name="company_name" placeholder="Company_name" value={{ $data->perusahaan }}">
+                            @error('company_name')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="qualification">Position Level</label>
-                            <select class="form-control select2bs4" style="width: 100%;" name="position_level" value="{{ $data->jns_karyawan }}">
+                            <select class="form-control @error('position_level') is-invalid @enderror select2bs4" style="width: 100%;" name="position_level" value="{{ $data->jns_karyawan }}">
                                 <option selected="selected" disabled>- Chose Position -</option>
                                 <option @if ($data->jns_karyawan == 'Internship / OJT') selected @endif value="Internship / OJT">Internship / OJT</option>
                                 <option @if ($data->jns_karyawan == 'Entry Level / Junior, Aprentice') selected @endif value="Entry Level / Junior, Aprentice">Entry Level / Junior, Aprentice</option>
@@ -205,20 +241,29 @@
                                 <option @if ($data->jns_karyawan == 'Mid-Senior Level / Manager') selected @endif value="Mid-Senior Level / Manager">Mid-Senior Level / Manager</option>
                                 <option @if ($data->jns_karyawan == 'Director / Executive') selected @endif value="Director / Executive">Directior / Executive</option>
                             </select>
+                            @error('position_level')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="salary">Monthly Salary</label>
-                            <input type="number" min="0" class="form-control" id="salary" name="salary" placeholder="Salary" value="{{ $data->gaji }}">
+                            <input type="number" min="0" class="form-control @error('salary') is-invalid @enderror" id="salary" name="salary" placeholder="Salary" value="{{ $data->gaji }}">
+                            @error('salary')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="country">Country</label>
-                            <input type="text" class="form-control" id="country" name="country" placeholder="Country" value="{{ $data->negara }}">
+                            <input type="text" class="form-control @error('country') is-invalid @enderror" id="country" name="country" placeholder="Country" value="{{ $data->negara }}">
+                            @error('country')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Start</label>
-                                    <select class="form-control select2bs4" style="width: 100%;" name="start_month" value="{{ old('start_month') }}">
+                                    <select class="form-control @error('start_month') is-invalid @enderror select2bs4" style="width: 100%;" name="start_month" value="{{ old('start_month') }}">
                                         <option selected="selected" disabled>- Month -</option>
                                         <option @if ($data->bln_mulai == 'January') selected @endif value="January">January</option>
                                         <option @if ($data->bln_mulai == 'February') selected @endif value="February">February</option>
@@ -233,13 +278,19 @@
                                         <option @if ($data->bln_mulai == 'November') selected @endif value="November">November</option>
                                         <option @if ($data->bln_mulai == 'December') selected @endif value="December">December</option>
                                     </select>
-                                    <input type="text" class="form-control mt-1" placeholder="Year" name="start_year" value="{{ $data->thn_mulai }}">
+                                    @error('start_month')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                    <input type="text" class="form-control @error('start_year') is-invalid @enderror mt-1" placeholder="Year" name="start_year" value="{{ $data->thn_mulai }}">
+                                    @error('start_year')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>End</label>
-                                    <select class="form-control select2bs4" style="width: 100%;" name="end_month" value="{{ old('end_month') }}">
+                                    <select class="form-control @error('end_month') is-invalid @enderror select2bs4" style="width: 100%;" name="end_month" value="{{ old('end_month') }}">
                                         <option selected="selected" disabled>- Month -</option>
                                         <option @if ($data->bln_selesai == 'January') selected @endif value="January">January</option>
                                         <option @if ($data->bln_selesai == 'February') selected @endif value="February">February</option>
@@ -254,13 +305,22 @@
                                         <option @if ($data->bln_selesai == 'November') selected @endif value="November">November</option>
                                         <option @if ($data->bln_selesai == 'December') selected @endif value="December">December</option>
                                     </select>
-                                    <input type="text" class="form-control mt-1" placeholder="Year" name="end_year" value="{{ $data->thn_selesai }}">
+                                    @error('end_month')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                    <input type="text" class="form-control @error('end_year') is-invalid @enderror mt-1" placeholder="Year" name="end_year" value="{{ $data->thn_selesai }}">
+                                    @error('end_year')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" class="form-control" id="description" rows="5" placeholder="Description"> {{ $data->deskripsi }}</textarea>
+                            <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description" rows="5" placeholder="Description"> {{ $data->deskripsi }}</textarea>
+                            @error('description')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                 </div>

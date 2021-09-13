@@ -11,7 +11,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            
+
             @if (count($resume)>0)
             <table border="0">
                 <tbody>
@@ -34,7 +34,7 @@
             @else
             <form class="form-horizontal" method="POST" action="/resume/add" enctype="multipart/form-data">
                 @csrf
-                <input type="file" class="form-control" id="resume" name="resume" placeholder="Resume title" value="{{ old('resume') }}">
+                <input type="file" class="@error('resume') is-invalid @enderror" id="resume" name="resume" placeholder="Resume title" value="{{ old('resume') }}">
                 <button type="submit" class="btn btn-primary mt-2">Upload</button>
             </form>
             @endif
@@ -62,20 +62,23 @@
                 <div class="modal-body">
                     <div class="card-body mt-0">
                         <div class="form-group">
-                            <label for="university">CV / Resume</label>                        
-                            <input type="file" class="form-control" id="resume" name="resume" placeholder="Resume title" value="{{ $data->cv }}">
+                            <label for="university">CV / Resume</label>
+                            <input type="file" class="form-control @error('resume') is-invalid @enderror" id="resume" name="resume" placeholder="Resume title" value="{{ $data->cv }}">
+                            @error('resume')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             <small>Acceptable file types are <strong>DOC, DOCX, PDF, and RTF</strong>.</small>
                             <br>
                             <small>Max file size is <strong>10 MB</strong>.</small>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-warning">Edit</button>
                 </div>
-            
+
             </form>
         </div>
       <!-- /.modal-content -->

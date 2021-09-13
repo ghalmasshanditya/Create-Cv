@@ -99,11 +99,14 @@
                     <div class="card-body mt-0">
                         <div class="form-group">
                             <label for="language">language Name</label>
-                            <input type="text" class="form-control" id="language" name="language" placeholder="Language" value="{{ old('language') }}">
+                            <input type="text" class="form-control @error('language') is-invalid @enderror" id="language" name="language" placeholder="Language" value="{{ old('language') }}">
+                            @error('language')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="qualification">Position Level</label>
-                            <select class="form-control select2bs4" style="width: 100%;" name="level" value="{{ old('level') }}">
+                            <select class="form-control @error('level') is-invalid @enderror select2bs4" style="width: 100%;" name="level" value="{{ old('level') }}">
                                 <option selected="selected" disabled>- Chose Position -</option>
                                 <option value="1">Basic</option>
                                 <option value="2">Novice</option>
@@ -111,6 +114,9 @@
                                 <option value="4">Advanced</option>
                                 <option value="5">Expert</option>
                             </select>
+                            @error('level')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -143,11 +149,14 @@
                     <div class="card-body mt-0">
                         <div class="form-group">
                             <label for="language">Language</label>
-                            <input type="text" class="form-control" id="language" name="language" placeholder="Language" value="{{ $data->bahasa }}">
+                            <input type="text" class="form-control @error('language') is-invalid @enderror" id="language" name="language" placeholder="Language" value="{{ $data->bahasa }}">
+                            @error('language')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="qualification">Position Level</label>
-                            <select class="form-control select2bs4" style="width: 100%;" name="level" value="{{ $data->tingkat }}">
+                            <select class="form-control @error('level') is-invalid @enderror select2bs4" style="width: 100%;" name="level" value="{{ $data->tingkat }}">
                                 <option selected="selected" disabled>- Chose Position -</option>
                                 <option @if ($data->tingkat == 1) selected @endif value="1">Basic</option>
                                 <option @if ($data->tingkat == 2) selected @endif value="2">Novice</option>
@@ -155,6 +164,9 @@
                                 <option @if ($data->tingkat == 4) selected @endif value="4">Advanced</option>
                                 <option @if ($data->tingkat == 5) selected @endif value="5">Expert</option>
                             </select>
+                            @error('level')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                 </div>

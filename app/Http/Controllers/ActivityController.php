@@ -49,6 +49,8 @@ class ActivityController extends Controller
             'role'         => 'required',
             'start_month'  => 'required',
             'start_year'   => 'required',
+            'end_month'    => 'required',
+            'end_year'     => 'required',
             'description'  => 'required',
         ];
         $messages = [
@@ -56,6 +58,8 @@ class ActivityController extends Controller
             'role.required'         => 'please enter the role first',
             'start_month.required'  => 'please enter the start_month first',
             'start_year.required'   => 'please enter the start_year first',
+            'end_month.required'    => 'please enter the end_month first',
+            'end_year.required'     => 'please enter the end_year first',
             'description.required'  => 'please enter the description first',
         ];
 

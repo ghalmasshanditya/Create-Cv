@@ -14,7 +14,10 @@
         <h3 class="profile-username text-center">Ghalmas Shanditya Putra Agung</h3>
         <form class="form-horizontal text-center" method="POST" action="/profile/change-profile/{{ Auth::user()->id }}" enctype="multipart/form-data">
             @csrf
-            <input type="file" class="form-control" id="profile" name="profile" placeholder="profile title" value="{{ old('profile') }}">
+            <input type="file" class="form-control @error('profile') is-invalid @enderror" id="profile" name="profile" placeholder="profile title" value="{{ old('profile') }}">
+            @error('profile')
+                <small class="text-danger">{{ $message }}</small><br>
+            @enderror
             <button type="submit" class="btn btn-primary mt-2 mb-2 center-block">Upload</button>
         </form>
         {{-- <p class="text-muted text-center">Back End Developer</p> --}}
@@ -47,60 +50,90 @@
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="{{ Auth::user()->name }}">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Name" name="name" value="{{ Auth::user()->name }}">
+                    @error('name')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" placeholder="email" name="email" disabled value="{{ Auth::user()->email }}">
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="email" name="email" disabled value="{{ Auth::user()->email }}">
+                    @error('email')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
             </div>
             <div class="form-group row">
                 <label for="Birth" class="col-sm-2 col-form-label">Date of birth</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control" id="Birth" placeholder="Birth" name="birth" value="{{ Auth::user()->ttl }}">
+                    <input type="date" class="form-control @error('birth') is-invalid @enderror" id="Birth" placeholder="Birth" name="birth" value="{{ Auth::user()->ttl }}">
+                    @error('birth')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
             </div>
             <div class="form-group row">
                 <label for="gender" class="col-sm-2 col-form-label">Gender</label>
                 <div class="col-sm-10">
-                    <select class="form-control select2bs4" style="width: 100%;" name="gender" value="{{ Auth::user()->jk }}">
+                    <select class="form-control @error('gender') is-invalid @enderror select2bs4" style="width: 100%;" name="gender" value="{{ Auth::user()->jk }}">
                         <option selected="selected" disabled>- Chose Gender -</option>
                         <option @if (Auth::user()->jk == 'Men') selected @endif value="Men">Men</option>
                         <option @if (Auth::user()->jk == 'Women') selected @endif value="Women">Women</option>
                     </select>
+                    @error('gender')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
             </div>
             <div class="form-group row">
                 <label for="phone" class="col-sm-2 col-form-label">Phone</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="phone" placeholder="phone" name="phone" value="{{ Auth::user()->telepon }}">
+                    <input type="number" class="form-control @error('phone') is-invalid @enderror" id="phone" placeholder="phone" name="phone" value="{{ Auth::user()->telepon }}">
+                    @error('phone')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
             </div>
             <div class="form-group row">
                 <label for="country" class="col-sm-2 col-form-label">Address</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control col-sm-12" id="country" placeholder="Country" name="country" value="{{ Auth::user()->negara }}">
+                    <input type="text" class="form-control @error('country') is-invalid @enderror col-sm-12" id="country" placeholder="Country" name="country" value="{{ Auth::user()->negara }}">
+                    @error('country')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control col-sm-12" id="province" placeholder="Province" name="province" value="{{ Auth::user()->provinsi }}">
+                    <input type="text" class="form-control @error('province') is-invalid @enderror col-sm-12" id="province" placeholder="Province" name="province" value="{{ Auth::user()->provinsi }}">
+                    @error('province')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control col-sm-12" id="city" placeholder="City" name="city" value="{{ Auth::user()->kota }}"><br>
+                    <input type="text" class="form-control @error('City') is-invalid @enderror col-sm-12" id="city" placeholder="City" name="city" value="{{ Auth::user()->kota }}"><br>
+                    @error('city')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
             </div>
             <div class="form-group row">
                 <label for="phone" class="col-sm-2 col-form-label"></label>
                 <div class="col-sm-10">
-                    <textarea class="form-control col-sm-12" placeholder="Address"  name="address" id="" rows="5">{{ Auth::user()->alamat }}</textarea>
+                    <textarea class="form-control @error('address') is-invalid @enderror col-sm-12" placeholder="Address"  name="address" id="" rows="5">{{ Auth::user()->alamat }}</textarea>
+                    @error('address')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
             </div>
             <div class="form-group row">
                 <label for="phone" class="col-sm-2 col-form-label">Summary</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control col-sm-12" placeholder="Summary"  name="summary" id="" rows="5">{{ Auth::user()->ringkasan }}</textarea>
+                    <textarea class="form-control @error('summary') is-invalid @enderror col-sm-12" placeholder="Summary"  name="summary" id="" rows="5">{{ Auth::user()->ringkasan }}</textarea>
+                    @error('summary')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
             </div>
             <div class="form-group row">

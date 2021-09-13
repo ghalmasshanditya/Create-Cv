@@ -77,23 +77,35 @@
                     <div class="card-body mt-0">
                         <div class="form-group">
                             <label for="training">Training Title</label>
-                            <input type="text" class="form-control" id="training" name="training" placeholder="Training title" value="{{ old('training') }}">
+                            <input type="text" class="form-control @error('training') is-invalid @enderror" id="training" name="training" placeholder="Training title" value="{{ old('training') }}">
+                            @error('training')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="organizer">Organizer</label>
-                            <input type="text" class="form-control" id="organizer" name="organizer" placeholder="Organizer" value="{{ old('organizer') }}">
+                            <input type="text" class="form-control @error('organizer') is-invalid @enderror" id="organizer" name="organizer" placeholder="Organizer" value="{{ old('organizer') }}">
+                            @error('organizer')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Start Date</label>
-                                    <input type="date" class="form-control" id="start_date" name="start_date" placeholder="Start Date" value="{{ old('start_date') }}">
+                                    <input type="date" class="form-control @error('start_date') is-invalid @enderror" id="start_date" name="start_date" placeholder="Start Date" value="{{ old('start_date') }}">
+                                    @error('start_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>End Date</label>
-                                    <input type="date" class="form-control" id="end_date" name="end_date" placeholder="End Date" value="{{ old('end_date') }}">
+                                    <input type="date" class="form-control @error('end_date') is-invalid @enderror" id="end_date" name="end_date" placeholder="End Date" value="{{ old('end_date') }}">
+                                    @error('end_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -128,23 +140,35 @@
                     <div class="card-body mt-0">
                         <div class="form-group">
                             <label for="training">Training Title</label>
-                            <input type="text" class="form-control" id="training" name="training" placeholder="Training title" value="{{ $data->nama_pelatihan }}">
+                            <input type="text" class="form-control @error('training') is-invalid @enderror" id="training" name="training" placeholder="Training title" value="{{ $data->nama_pelatihan }}">
+                            @error('training')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="organizer">Organizer</label>
-                            <input type="text" class="form-control" id="organizer" name="organizer" placeholder="Organizer" value="{{ $data->penyelenggara }}">
+                            <input type="text" class="form-control @error('organizer') is-invalid @enderror" id="organizer" name="organizer" placeholder="Organizer" value="{{ $data->penyelenggara }}">
+                            @error('organizer')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Start Date</label>
-                                    <input type="date" class="form-control" id="start_date" name="start_date" placeholder="Start Date" value="{{ $data->tgl_mulai }}">
+                                    <input type="date" class="form-control @error('start_date') is-invalid @enderror" id="start_date" name="start_date" placeholder="Start Date" value="{{ $data->tgl_mulai }}">
+                                    @error('start_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>End Date</label>
-                                    <input type="date" class="form-control" id="end_date" name="end_date" placeholder="End Date" value="{{ $data->tgl_selesai }}">
+                                    <input type="date" class="form-control @error('end_date') is-invalid @enderror" id="end_date" name="end_date" placeholder="End Date" value="{{ $data->tgl_selesai }}">
+                                    @error('end_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
