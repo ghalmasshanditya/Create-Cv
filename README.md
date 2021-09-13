@@ -63,6 +63,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+## Additional Features
+
+- Foto Profile di Resize supaya semua ukuran foto yang masuk kedalam database atau tampil pada aplikasi seukuran sama.
+- Masih belum adanya respon ketika suatu fungsionalitas berhasil di lakukan (ex. Setelah tambah data pendidikan muncul toastr/alert js/flash session bahwa data berhasil ditambahkan)
+- Form Validation diperbanyak bukan hanya required saja.
+- Password reset
+- Change Password
+
 ## Screenshoots Application
 
 1. Register
