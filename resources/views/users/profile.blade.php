@@ -12,7 +12,11 @@
         </div>
 
         <h3 class="profile-username text-center">Ghalmas Shanditya Putra Agung</h3>
-
+        <form class="form-horizontal text-center" method="POST" action="/profile/change-profile/{{ Auth::user()->id }}" enctype="multipart/form-data">
+            @csrf
+            <input type="file" class="form-control" id="profile" name="profile" placeholder="profile title" value="{{ old('profile') }}">
+            <button type="submit" class="btn btn-primary mt-2 mb-2 center-block">Upload</button>
+        </form>
         {{-- <p class="text-muted text-center">Back End Developer</p> --}}
 
         <ul class="list-group list-group-unbordered mb-3">
@@ -85,7 +89,7 @@
                 <div class="col-sm-3">
                     <input type="text" class="form-control col-sm-12" id="city" placeholder="City" name="city" value="{{ Auth::user()->kota }}"><br>
                 </div>
-                
+
             </div>
             <div class="form-group row">
                 <label for="phone" class="col-sm-2 col-form-label"></label>

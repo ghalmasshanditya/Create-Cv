@@ -19,6 +19,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/export', [ProfileController::class, 'export'])->name('profile-export');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::post('/profile/update/{id}', [ProfileController::class, 'update'])->name('profile-update');
+    Route::post('/profile/change-profile/{id}', [ProfileController::class, 'updateProfile'])->name('profile-foto');
 
     Route::get('/education', [EducationController::class, 'index'])->name('education');
     Route::post('/education/add', [EducationController::class, 'store'])->name('education-add');

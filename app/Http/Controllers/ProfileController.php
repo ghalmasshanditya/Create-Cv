@@ -168,6 +168,37 @@ class ProfileController extends Controller
         return redirect('profile')->with('message', 'Congratulations! Success to add experience.');
     }
 
+    public function updateProfile(Request $request, $id)
+    {
+        // die;
+        $rules = [
+            'profile' => 'required|max:4048|mimes:jpg,jpeg,gif,png',
+        ];
+        $messages = [
+            'profile.required' => 'please select the file first',
+            'profile.max'      => 'Maximum file 4 MB',
+            'profile.mimes'    => 'Acceptable file types are JPG, JPEG, GIF, AND PNG',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput($request->all())->with('message', 'Sorry! Failed to change profile.');
+        }
+        // die;
+        $file     = Request()->profile;
+        $fileName = Auth::user()->email . '.' . $file->extension();
+
+        $file->move(public_path('assets/dist/img/'), $fileName);
+
+        $data = array(
+            'foto'       => $fileName,
+            'updated_at' => date('Y-m-d N:i:s'),
+        );
+        // dd($data);
+        $this->Profile->updateData($data, $id);
+        return redirect('profile')->with('message', 'Congratulations! Success to update your profile.');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
