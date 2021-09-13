@@ -9,6 +9,10 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\TrainingsController;
 use App\Http\Controllers\ResumeController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
+
+Route::get('/', [AuthenticatedSessionController::class, 'create'])->name('profile-login');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/preview', [ProfileController::class, 'show'])->name('profile-preview');
